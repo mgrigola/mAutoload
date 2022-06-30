@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="deploy" basedir=".">
+	<property file="build.properties"/>
+
+	<target name="deploy" description="Deploy the completed application">
+		<echo message="Deploying the completed application"/>
+		<mkdir dir="${deployDir}/${packageName}" />
+		<delete includeemptydirs="true">
+			<fileset dir="${deployDir}/${packageName}" includes="**/*" />
+		</delete>
+		<copy todir="${deployDir}/${packageName}">
+			<fileset dir="${packageName}">
+				<exclude name="**/Resources/**" />
+				<exclude name="Inventor**" />
+				<exclude name="scratch**" />
+				<exclude name="gui.m" />
+			</fileset>
+			<fileset file="PacletInfo.m" />
+		</copy>
+	</target>
+
+</project>

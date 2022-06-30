@@ -1,0 +1,11 @@
+Resources[
+    Version[1],
+    Sources[
+        Directory["~"]
+    ],
+    ExecutionBuildCommand["<<mAutoload`"],
+    Paclet[
+        DocumentationFolder[""],
+        FunctionPaclet[True]
+    ]
+]
